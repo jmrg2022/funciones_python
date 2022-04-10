@@ -37,20 +37,29 @@ en la lista pueden usar el método nativo de list "count"
 # Aquí copiar la función "lista_aleatoria"
 # ya elaborada en el ejercicio anterior
 
+def lista_aleatoria (inicio, fin, cantidad):
+    lista_numeros = []
+    for inicio in range(cantidad):
+        numero = random.randrange(inicio, fin+1)
+        lista_numeros.append(numero)
+    
+    return lista_numeros
 
 # --------------------------------
 
 # --------------------------------
 # Aquí dentro definir la función contar
 
-
+def contar_repetidos(lista_numeros,numero):
+    cant_repetidos=lista_numeros.count(numero)
+    return cant_repetidos
 # --------------------------------
 
 if __name__ == '__main__':
     print("Bienvenidos a otra clase de Inove con Python")
     
     inicio = 0
-    fin = 10
+    fin = 6
     cantidad = 5
 
     # Alumno: Utilizar la función "lista_aleatoria"
@@ -59,15 +68,24 @@ if __name__ == '__main__':
 
     # lista_numeros = lista_aleatoria()
 
+    lista_numeros = lista_aleatoria(inicio, fin, cantidad)
+
     # Imprimir en pantalla "lista_numeros" que tendrá
     # los valores retornado por la función "lista_aleatoria":
 
     # print(lista_numeros)
 
+    print("La lista aleatoria es:",lista_numeros)
+
     # Luego quiero averiguar cuantas veces se repite el numero 3
     # en la lista aleatoria creada
     # cantidad_tres = contar(lista_numeros, 3)
 
+    repetido = 3
+    cantidad_repetidos = contar_repetidos(lista_numeros, repetido)
+
     # print(cantidad_tres)
+
+    print("El número",repetido,"se repite:",cantidad_repetidos,"veces")
 
     print("terminamos")
